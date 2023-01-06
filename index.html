@@ -19,6 +19,7 @@
             <input name="address" type="text" placeholder="Enter your address">
             <input type="button" value="Save" onclick="sanu()">
         </form>
+        <hr>
         <table border = "1" id="mytable">
             <thead>
                 <tr>
@@ -28,7 +29,6 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <hr>
             <tbody>
                 <tr>
                     <td>Saloni</td>
@@ -60,13 +60,30 @@
 
             let tbdy = document.querySelector("table#mytable tbody");
             var sanu = ()=>{
-                alert("sanu");
+                //alert("sanu");
                 let y; //Local Variable
                 console.log(n.value);
                 console.log(sn.value);
                 console.log(addr.value);
                 console.log(tbdy);
-                tbdy.innerHTML += tbdy.innerHTML + '';
+                tbdy.innerHTML += `<tr>
+                                        <td>${n.value}</td>
+                                        <td>${sn.value}</td>
+                                        <td>${addr.value}</td>
+                                        <td>
+                                            <button>View</button>
+                                            <button>Edit</button>
+                                            <button onclick="deleteElem(this)">Delete</button>
+                                        </td>
+                                    </tr>`; //Append Technique
+                n.value = sn.value = addr.value ='';                                    
+            }
+
+            const deleteElem = (a)=>{
+                //alert("SeeYou");
+                confirm("Do you want to delete your data");
+                a.closest('tr').remove();
+                console.log(a.closest('tr'));
             }
         </script>
     </body>
