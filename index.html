@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Student CRUD using HTML Form and a Table</title>
+        <style>
+
+        </style>
+        <script>
+            //I can write the JS code before the closing of head tag
+        </script>
+    </head>
+    <body>
+        <form>
+            <input name="name" type="text" placeholder="Enter your name">
+            <input name="surname" type="text" placeholder="Enter your surname">
+            <input name="address" type="text" placeholder="Enter your address">
+            <input type="button" value="Save" onclick="sanu()">
+        </form>
+        <table border = "1" id="mytable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <hr>
+            <tbody>
+                <tr>
+                    <td>Saloni</td>
+                    <td>Modi</td>
+                    <td>Dewas</td>
+                    <td>
+                        <button>View</button>
+                        <button>Edit</button>
+                        <button>Delete</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+        <script>
+            //I can write the JS code before the closing of body tag
+            //There are 2 ways to define a function
+            //1. Old way
+            function saloni(){
+                alert("saloni");
+            }
+            //2. New way  Fat Arrow => ES6 
+            var x; //Global Variable
+            let n = document.querySelector("input[name='name']");
+            let sn = document.querySelector("input[name='surname']");
+            let addr = document.querySelector("input[name='address']");
+
+            let tbdy = document.querySelector("table#mytable tbody");
+            var sanu = ()=>{
+                alert("sanu");
+                let y; //Local Variable
+                console.log(n.value);
+                console.log(sn.value);
+                console.log(addr.value);
+                console.log(tbdy);
+                tbdy.innerHTML += tbdy.innerHTML + '';
+            }
+        </script>
+    </body>
+</html>
